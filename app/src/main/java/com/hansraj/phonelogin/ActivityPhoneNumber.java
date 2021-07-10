@@ -23,13 +23,13 @@ public class ActivityPhoneNumber extends AppCompatActivity {
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                phoneNumber=pnumber.getText().toString().trim();
+                phoneNumber="+91"+pnumber.getText().toString().trim();
                 if(phoneNumber.length()<13){
                     pnumber.setError("enter a valid number");
                 }
                 else{
                     Intent intent=new Intent(ActivityPhoneNumber.this,OtpActivity.class);
-                    intent.putExtra("phoneNumber", pnumber.getText().toString().trim());
+                    intent.putExtra("phoneNumber", phoneNumber);
                     startActivity(intent);
                 }
             }

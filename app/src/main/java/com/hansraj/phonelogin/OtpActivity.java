@@ -84,16 +84,23 @@ public class OtpActivity extends AppCompatActivity {
         otpView.setOtpCompletionListener(new OnOtpCompletionListener() {
             @Override
             public void onOtpCompleted(String otp) {
+                dialog.setMessage("Verifying otp...");
+                dialog.setCancelable(false);
+                dialog.show();
+
                 PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, otp);
                 mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull  Task<AuthResult> task) {
                         if(task.isSuccessful()) {
+                            dialog.dismiss();
                             Intent intent = new Intent(OtpActivity.this, Set_Up_Profile_Activity.class);
                             startActivity(intent);
                             finishAffinity();
                         } else {
-                            Toast.makeText(OtpActivity.this, "Failed.", Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                            Toast.makeText(OtpActivity.this, "ENTER CORRECT OTP.", Toast.LENGTH_SHORT).show();
+                            otpView.setText("");
                         }
 
                     }
