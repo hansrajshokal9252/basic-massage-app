@@ -1,0 +1,2 @@
+rootProject.name = "phonelogin"
+include ':app'
