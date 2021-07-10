@@ -18,13 +18,14 @@ public class ActivityPhoneNumber extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone_number);
+        getSupportActionBar().hide();
         pnumber=findViewById(R.id.phoneBox);
         continuebutton=findViewById(R.id.continueBtn);
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 phoneNumber="+91"+pnumber.getText().toString().trim();
-                if(phoneNumber.length()<13){
+                if(phoneNumber.length()!=13 ){
                     pnumber.setError("enter a valid number");
                 }
                 else{
