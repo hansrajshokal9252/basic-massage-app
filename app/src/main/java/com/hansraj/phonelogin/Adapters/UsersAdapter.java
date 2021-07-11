@@ -1,4 +1,4 @@
-package com.hansraj.phonelogin;
+package com.hansraj.phonelogin.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,16 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.hansraj.phonelogin.Activities.ChatActivity;
+import com.hansraj.phonelogin.R;
+import com.hansraj.phonelogin.Models.User;
 import com.hansraj.phonelogin.databinding.RowConversationBinding;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHolder> {
 
@@ -49,6 +45,15 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersViewHol
         Glide.with(context).load(user.getProfileImage())
                 .placeholder(R.drawable.defaultprofile)
                 .into(holder.binding.profile);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, ChatActivity.class);
+                intent.putExtra("name", user.getName());
+                intent.putExtra("uid", user.getUid());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

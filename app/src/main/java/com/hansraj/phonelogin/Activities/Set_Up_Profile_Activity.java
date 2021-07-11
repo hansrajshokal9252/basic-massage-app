@@ -1,4 +1,4 @@
-package com.hansraj.phonelogin;
+package com.hansraj.phonelogin.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,10 +18,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.hansraj.phonelogin.Models.User;
 import com.hansraj.phonelogin.databinding.ActivitySetUpProfileBinding;
-
-import java.util.Date;
-import java.util.HashMap;
 
 public class Set_Up_Profile_Activity extends AppCompatActivity {
 

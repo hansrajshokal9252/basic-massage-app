@@ -1,4 +1,4 @@
-package com.hansraj.phonelogin;
+package com.hansraj.phonelogin.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import com.hansraj.phonelogin.R;
 
 public class ActivityPhoneNumber extends AppCompatActivity {
     EditText pnumber;
@@ -29,7 +30,7 @@ public class ActivityPhoneNumber extends AppCompatActivity {
                     pnumber.setError("enter a valid number");
                 }
                 else{
-                    Intent intent=new Intent(ActivityPhoneNumber.this,OtpActivity.class);
+                    Intent intent=new Intent(ActivityPhoneNumber.this, OtpActivity.class);
                     intent.putExtra("phoneNumber", phoneNumber);
                     startActivity(intent);
                 }

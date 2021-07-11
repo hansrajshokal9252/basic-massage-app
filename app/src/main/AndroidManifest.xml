@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Phonelogin">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Set_Up_Profile_Activity" />
-        <activity android:name=".OtpActivity" />
-        <activity android:name=".ActivityPhoneNumber">
+        <activity android:name=".Activities.ChatActivity"></activity>
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.Set_Up_Profile_Activity" />
+        <activity android:name=".Activities.OtpActivity" />
+        <activity android:name=".Activities.ActivityPhoneNumber">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

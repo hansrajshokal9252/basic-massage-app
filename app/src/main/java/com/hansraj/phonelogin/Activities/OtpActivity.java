@@ -1,4 +1,4 @@
-package com.hansraj.phonelogin;
+package com.hansraj.phonelogin.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.hansraj.phonelogin.R;
 import com.mukesh.OnOtpCompletionListener;
 import com.mukesh.OtpView;
 

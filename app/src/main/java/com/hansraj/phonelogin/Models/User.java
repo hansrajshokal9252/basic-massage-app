@@ -1,4 +1,4 @@
-package com.hansraj.phonelogin;
+package com.hansraj.phonelogin.Models;
 
 public class User {
 
