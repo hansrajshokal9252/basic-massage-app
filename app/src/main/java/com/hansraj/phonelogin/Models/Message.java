@@ -3,7 +3,7 @@ package com.hansraj.phonelogin.Models;
 public class Message {
     private String messageId, message, senderId;
     private long timestamp;
-    private int feeling = -1;
+    private int feeling =-1;
 
     public Message() {
     }
